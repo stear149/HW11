@@ -33,8 +33,6 @@ Scale = 0.3; %used to scale the size of the arrows
 hold on;
 
 for i=1:size(G,1)
-    %Draws the dots
-    drawNode(G(i,1),G(i,2),radius,string(i),fontsize);
 
     %Draws force
     drawArrow(G(i,1),G(i,2) + radius, G(i,1) + (F(i,1) * Scale), G(i,2) + radius,weight, 'red','red');
@@ -55,6 +53,9 @@ for i=1:size(G,1)
     Rtexty1 = (G(i,2) - radius + G(i,2) - radius)/2 + 0.1;
     Rtextx2 = (G(i,1) + G(i,1))/2 + 0.1;
     Rtexty2 = (G(i,2) - radius + G(i,2) - radius + (R(i,2) * Scale))/2 + 0.1;
+
+    %Draws the nodes
+    drawNode(G(i,1),G(i,2),radius,string(i),fontsize);
 
     if F(i,1) ~= 0
         text(Ftextx1,Ftexty1,string(F(i,1)),'FontSize',12,'color','red');
@@ -80,3 +81,4 @@ hold off;
 
 
 end
+
