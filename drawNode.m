@@ -1,0 +1,13 @@
+function drawNode(xc, yc, radius, label, fontsize)
+
+
+drawDisk(xc, yc, radius, 'black', 'white');
+
+text(xc, yc, label, ...
+    'FontUnits', 'normalized', ...
+    'FontSize', fontsize, ...
+    'HorizontalAlignment', 'center', ...
+    'VerticalAlignment', 'middle');
+
+
+end
