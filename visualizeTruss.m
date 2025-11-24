@@ -2,7 +2,12 @@
 % function visualizeTruss()
 %
 % Input Arguments:
-% None
+% (From getValidUserInput, not input directly by user)
+% G is an N x 2 matrix, describes the geometry of the truss
+% C is an M x 2 matrix, describes the start and end nodes of the members
+% F is an N x 2 matrix, describes the external forces acting on the truss
+% R is an N x 2 matrix, describes the reactions from the truss
+% T is an M x 1 matrix, describes the tenstion within the members
 %
 % Output Arguments:
 % None
@@ -31,3 +36,4 @@ drawExternalLoads(G, F, R, titlestr, radius, fontsize); %figure 1
 drawTruss(G, C, T, titlestr, radius, fontsize); %figure 2
 
 end
+
