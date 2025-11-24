@@ -75,5 +75,4 @@ function [G, C, F, R, T, filename] = getValidUserInput()
     assert(size(T, 1) == size(C,1), 'T must have size N-by-1, where N = number of rows in G.');
     assert(size(T,2) == 1, 'T must have 2 cols');
     assert(isnumeric(T), 'T must contain numeric values');
-
 end
