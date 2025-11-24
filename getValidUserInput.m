@@ -44,14 +44,14 @@ function [G, C, F, R, T, filename] = getValidUserInput()
 
     %============= VALIDATE G =============
 
-    assert(size(G, 1) > 3, 'G must have more than 3 rows');
+    assert(size(G, 1) >= 3, 'G must have more than 3 rows');
     assert(size(G, 2) == 2, 'G must have 2 cols');
     assert(all(pdist(G) ~= 0) == 1, 'G contains coincident nodes (duplicate rows).');
     assert(isnumeric(G), 'G must contain numeric values')
 
     %============= VALIDATE C =============
 
-    assert(size(C, 1) > 3, 'C must have more than 3 rows');
+    assert(size(C, 1) >= 3, 'C must have more than 3 rows');
     assert(size(C, 2) == 2, 'C must have 2 cols');
     assert(all(C(:)==floor(C(:))), 'C includes non-intiger numbers')
     assert(any(C(:) > 1) && any(C(:) < N),'C contains node indices outside the range 1 to N')
