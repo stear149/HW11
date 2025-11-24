@@ -34,12 +34,17 @@ while(noFile)
     
     betaFilename = input('Enter File Name Here (ex. "pratt.xlsx"): ', 's');
 
-%this code removes the need to add '.xlsx' 
-    expectedExtension = '.xlsx';
-    filename = [betaFilename, expectedExtension]; 
-    
-%if you keep getting errors, ensure the file you're trying to access is in
-%the working directory, and don't include unnecessary spaces
+    % Check if the filename already has the .xlsx extension
+    if endsWith(betaFilename, '.xlsx')
+        filename = betaFilename; 
+    else
+        % Append the .xlsx extension if it's not present
+        expectedExtension = '.xlsx';
+        filename = [betaFilename, expectedExtension]; 
+    end
+
+    % If you keep getting errors, ensure the file you're trying to access is in
+    % the working directory, and don't include unnecessary spaces
 
     if exist(filename, 'file') == 2
         noFile = false;
