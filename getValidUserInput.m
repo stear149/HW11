@@ -25,14 +25,33 @@
 % Version: Nov. 24, 2025
 %==========================================================================
 function [G, C, F, R, T, filename] = getValidUserInput()
-    filename = '';
-    while exist(filename, 'file') ~= 2
-        filename = input('Type File Name: ','s');
-        if exist(filename, 'file') ~= 2
-            fprintf('\nFile %s does not exist in the directory. \n', filename);
-            fprintf('Please Try Again. \n\n')
-        end
-    end
+
+%==========================================================================
+%Talk with the user to get the name of the file
+%==========================================================================
+    noFile = true;
+while(noFile)
+    
+    betaFilename = input('Enter File Name Here (ex. "pratt.xlsx"): ', 's');
+
+%this code removes the need to add '.xlsx' 
+    expectedExtension = '.xlsx';
+    filename = [betaFilename, expectedExtension]; 
+    
+%if you keep getting errors, ensure the file you're trying to access is in
+%the working directory, and don't include unnecessary spaces
+
+    if exist(filename, 'file') == 2
+        noFile = false;
+    else
+        disp('File not found. File must be in working directory'); 
+    end 
+
+end
+
+%==========================================================================
+%Read the spreadsheet
+%==========================================================================
 
     G = readmatrix(filename, 'Sheet','G');
     C = readmatrix(filename, 'Sheet','C');
@@ -41,6 +60,10 @@ function [G, C, F, R, T, filename] = getValidUserInput()
     T = readmatrix(filename, 'Sheet','T');
 
     N = size(G,1);
+
+%==========================================================================
+%Validation
+%==========================================================================
 
     %============= VALIDATE G =============
 
