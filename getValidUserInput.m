@@ -29,29 +29,30 @@ function [G, C, F, R, T, filename] = getValidUserInput()
 %==========================================================================
 %Talk with the user to get the name of the file
 %==========================================================================
-    noFile = true;
-while(noFile)
+
+while true
     
-    betaFilename = input('Enter File Name Here (ex. "pratt.xlsx"): ', 's');
-
-    % Check if the filename already has the .xlsx extension
-    if endsWith(betaFilename, '.xlsx')
-        filename = betaFilename; 
-    else
-        % Append the .xlsx extension if it's not present
-        expectedExtension = '.xlsx';
-        filename = [betaFilename, expectedExtension]; 
+    user_input = input('Enter File Name Here (ex. "pratt.xlsx"): ', 's');
+    
+    % Deconstruct the user input.
+    [filepath, name, ext] = fileparts(user_input);
+    
+    % Force the extension to be '.xlsx'. strcmpi is case-insensitive comparison.
+    if ~strcmpi(ext, '.xlsx')
+        ext = '.xlsx';
     end
+    
+    % Reconstruct the filename. fullfile ensures the correct file separator is used.
+    filename_to_check = fullfile(filepath, [name, ext]); 
 
-    % If you keep getting errors, ensure the file you're trying to access is in
-    % the working directory, and don't include unnecessary spaces
-
-    if exist(filename, 'file') == 2
-        noFile = false;
+    % Check if the file exists.
+    if exist(filename_to_check, 'file') == 2
+        disp(['File "' filename_to_check '" accepted.']);
+        filename = filename_to_check; % Set the final variable
+        break;
     else
-        disp('File not found. File must be in working directory'); 
+        disp('File not found. Please ensure the file is in the working directory.'); 
     end 
-
 end
 
 %==========================================================================
