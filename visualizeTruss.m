@@ -17,7 +17,10 @@
 % This function works with drawTruss and drawExternalLoads to give a 
 % graphical interpretation of the given truss.
 %
-% Authors: Code originally written by Group G, modified by Group I
+% Authors: Group I
+%  Owen Haberstroh (haber297@umn.edu)
+%  Lily Wilkerson (wilke541@umn.edu)
+%  Evan Stearns (stear149@umn.edu)
 %
 % Version: Nov. 20, 2025
 %==========================================================================
@@ -42,5 +45,6 @@ drawExternalLoads(G, F, R, titlestr, radius, fontsize); %figure 1
 drawTruss(G, C, T, titlestr, radius, fontsize); %figure 2
 
 end
+
 
 
