@@ -17,6 +17,10 @@
 % getValidUserInput to be called by visualizeTruss.
 %
 % Authors: Code originally written by Group G, modified by Group I
+% Authors: Group I
+%  Owen Haberstroh (haber297@umn.edu)
+%  Lily Wilkerson (wilke541@umn.edu)
+%  Evan Stearns (stear149@umn.edu)
 %
 % Version: Nov. 20, 2025
 %==========================================================================
@@ -81,6 +85,7 @@ hold off;
 
 
 end
+
 
 
 
