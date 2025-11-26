@@ -8,6 +8,8 @@
 % F is an N x 2 matrix, describes the external forces acting on the truss
 % R is an N x 2 matrix, describes the reactions from the truss
 % T is an M x 1 matrix, describes the tenstion within the members
+% filename is the name of the file you're working with, to be used for
+% titling
 %
 % Output Arguments:
 % None
@@ -40,4 +42,5 @@ drawExternalLoads(G, F, R, titlestr, radius, fontsize); %figure 1
 drawTruss(G, C, T, titlestr, radius, fontsize); %figure 2
 
 end
+
 
