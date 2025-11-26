@@ -17,6 +17,9 @@
 % getValidUserInput to be called by visualizeTruss.
 %
 % Authors: Code originally written by Group G, modified by Group I
+%  Owen Haberstroh (haber297@umn.edu)
+%  Lily Wilkerson (wilke541@umn.edu)
+%  Evan Stearns (stear149@umn.edu)
 %
 % Version: Nov. 19, 2025
 %==========================================================================
@@ -79,3 +82,4 @@ function drawTruss(G, C, T, titlestr, radius, fontsize)
 
     hold off;
 end
+
