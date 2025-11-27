@@ -35,8 +35,8 @@ radius = (mean(pdist(G)))/40;
 fontsize = min(radius^(1/4),.025);
 
 % Print radius and fontsize
-fprintf('Radius: %.4f\n', radius);
-fprintf('Fontsize: %.4f\n', fontsize);
+% fprintf('Radius: %.4f\n', radius);
+% fprintf('Fontsize: %.4f\n', fontsize);
 
 %set titles and draw the figures
 titlestr = filename;
