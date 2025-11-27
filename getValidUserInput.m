@@ -32,7 +32,9 @@ function [G, C, F, R, T, filename] = getValidUserInput()
 
 while true
     
-    user_input = input('Enter File Name Here (ex. "pratt.xlsx"): ', 's');
+    user_input = input('Enter File Name Here (ex. "pratt"): ', 's');
+    %if you keep getting errors, ensure the file you're trying to access is in
+    %the working directory, and don't include unnecessary spaces
     
     % Deconstruct the user input.
     [filepath, name, ext] = fileparts(user_input);
