@@ -39,12 +39,16 @@ fontsize = min(radius^(1/4),.025);
 % fprintf('Fontsize: %.4f\n', fontsize);
 
 %set titles and draw the figures
-titlestr = filename;
+[~, baseName, ~] = fileparts(filename);
+titlestr = baseName;
+
+%draw the figures
 drawExternalLoads(G, F, R, titlestr, radius, fontsize); %figure 1
 
 drawTruss(G, C, T, titlestr, radius, fontsize); %figure 2
 
 end
+
 
 
 
